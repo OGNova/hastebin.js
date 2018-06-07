@@ -7,6 +7,9 @@ A NPM package to post data to hastebin.
 ```js
 const hastebin = require('hastebin.js');
 
-const link = hastebin.post('hello!');
+const haste = new hastebin();
+
+const link = haste.post('Helllo from hastebin.js!');
 console.log(link);
+// Will return a link such as https://hastebin.com/sofomuqifo.js
 ```
