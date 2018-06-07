@@ -1,0 +1,22 @@
+{
+  "name": "hastebin.js",
+  "version": "0.0.1",
+  "description": "A NPM package to post data to hastebin.",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OGNova/hastebin.js.git"
+  },
+  "author": "OGNovuh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OGNova/hastebin.js/issues"
+  },
+  "homepage": "https://github.com/OGNova/hastebin.js#readme",
+  "dependencies": {
+    "snekfetch": "^4.0.2"
+  }
+}
