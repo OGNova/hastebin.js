@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/OGNova/hastebin.js#readme",
   "dependencies": {
-    "snekfetch": "^4.0.2"
+    "snekfetch": "^3.6.4"
   }
 }
