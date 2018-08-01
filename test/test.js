@@ -4,7 +4,8 @@ const h = new haste();
 const args = process.argv;
 
 if (args[2] === 'post') {
-  const link = h.post('Helllo from hastebin.js!').then(link => console.log(`Posted to ${link}`)); 
+  const code = args.slice(2);
+  const link = h.post(code).then(link => console.log(`Posted to ${link}`)); 
 }
 
 if (args[2] === 'get') {

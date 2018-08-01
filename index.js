@@ -6,6 +6,7 @@ module.exports = class Hastebin {
   }
 
   async post(code) {
+    if (!code) throw new Error('You must supply code to upload to hastebin.');
     const { body } = await post('https://hastebin.com/documents').send(code).catch(console.error);
     const url = `https://hastebin.com/${body.key}.js`;
     return url;

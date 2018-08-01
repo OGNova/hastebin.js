@@ -9,7 +9,6 @@ const hastebin = require('hastebin.js');
 
 const haste = new hastebin();
 
-const link = haste.post('Helllo from hastebin.js!');
-console.log(link);
+const link = haste.post('Helllo from hastebin.js!').then(link => console.log(link));
 // Will return a link such as https://hastebin.com/sofomuqifo.js
 ```
