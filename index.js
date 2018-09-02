@@ -1,23 +1,22 @@
-const { get, post } = require('snekfetch');
+const fetch = require('node-fetch');
 
 module.exports = class Hastebin {
-  constructor() {}
-
-  async post(opts) {
-    const code = opts.splice(1).join(' ');
-    if (!code) throw new Error('You must supply code to upload to hastebin.');
-    const { body } = await post('https://hastebin.com/documents').send(code).catch(console.error);
-    const url = `https://hastebin.com/${body.key}.js`;
-    return url;
+  constructor(options = {}) {
+    this.options = options;
+    this.dev = options.dev || false;
+    this.baseURL = options.url || this.dev ? 'https://hasteb.in' : 'https://hastebin.com';
   }
 
-  async get(key) {
-    const url = `https://hastebin.com/${key}.js`;
-    const body = await get(url);
-    if (body.status === 200) {
-      return url;
-    } else {
-      throw new Error('That file does not exist. Please check your spelling and try again.');
-    }
+  async post(opts) {
+    return this._post(opts);
+  }
+
+  async _post(opts) {
+    const code = opts.splice(1).join(' ');
+    if (!code) throw new Error('You must supply code to upload to hastebin.');
+    const res = await fetch(`${this.baseURL}/documents`, { method: 'POST', body: code });
+    const json = await res.json();
+    const url = `${this.baseURL}/${json.key}.js`;
+    return url;
   }
 };
