@@ -1,6 +1,6 @@
 {
   "name": "hastebin.js",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A NPM package to post data to hastebin.",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/OGNova/hastebin.js#readme",
   "dependencies": {
+    "node-fetch": "^2.2.0",
     "snekfetch": "^3.6.4"
   }
 }
