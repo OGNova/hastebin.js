@@ -19,7 +19,7 @@ const link = haste.post('Helllo from hastebin.js!').then(link => console.log(lin
 
 * [Hastebin](#Hastebin)
   * _instance_
-    * [.post(opts)](#Hastebin+post) ⇒ <code>{Promise<Pending>}</code>
+    * [.post(opts)](#Hastebin+post) ⇒ `{Promise<Pending>}`
 
 
 <a name="Hastebin+post"></a>
