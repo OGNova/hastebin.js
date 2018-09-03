@@ -32,8 +32,7 @@ module.exports = class Hastebin {
   * @param {string} opts Code to post.
   * @returns {Promise<pending>} 
   */
-  async post(opts) {
-    const code = opts.splice(1).join(' ');
+  async post(code) {
     if (!code) throw new Error('You must supply code to upload to hastebin.');
     const res = await fetch(`${this.baseURL}/documents`, { method: 'POST', body: code });
     const json = await res.json();
