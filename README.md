@@ -2,8 +2,6 @@
 
 A NPM package to post data to hastebin.
 
-Due to how node-fetch works, you canot await the `post` function, you must use [#then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) to resolve the promise that's returned.
-
 ## Example Usage
 
 ```js
