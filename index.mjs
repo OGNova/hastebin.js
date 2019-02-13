@@ -1,36 +1,30 @@
-const fetch = require('node-fetch');
+import * as nodeFetch from 'node-fetch';
+const fetch = nodeFetch.default;
 
-module.exports = class Hastebin {
-  /**
-   * @typedef {Object} ClientOptions
-   * @property {Boolean} [dev=false]
-   * @memberof Hastebin
-   */
-
-  /**
-  * @param {ClientOptions} [options] Client options 
-  */
+export default class Hastebin {
   constructor(options = {}) {
     /**
-    * Client options
-    * @type {object} 
+    * Client Options
+    * @type {object}
     */
     this.options = options;
+
     /**
     * Whether or not to use hasteb.in
-    * @type {Boolean} 
+    * @type {Boolean}
     */
     this.dev = options.dev || false;
+
     /**
     * Base URL for Hastebin client.
-    * @type {string} 
+    * @type {string}
     */
     this.baseURL = options.url || this.dev ? 'https://hasteb.in' : 'https://hastebin.com';
   }
 
   /**
   * @param {any} code Code to post.
-  * @returns {Promise<pending>} 
+  * @returns {Promise<pending>}
   */
   async post(code) {
     return this._post(code);
@@ -42,8 +36,9 @@ module.exports = class Hastebin {
       method: 'POST',
       body: code
     });
+    if (!res.status !== 200) throw new Error('Something went wrong, please try again later.');
     const json = await res.json();
     const url = `${this.baseURL}/${json.key}.js`;
     return url;
   }
-};
+}
