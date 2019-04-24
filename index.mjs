@@ -16,10 +16,16 @@ export default class Hastebin {
     this.dev = options.dev || false;
 
     /**
+    *  Supplied Haste client URL.
+    * @type {String}
+    */
+    this.url = options.url;
+
+    /**
     * Base URL for Hastebin client.
     * @type {string}
     */
-    this.baseURL = options.url || this.dev ? 'https://hasteb.in' : 'https://hastebin.com';
+    this.baseURL = this.url ? this.url : 'https://hasteb.in';
   }
 
   /**
@@ -31,6 +37,7 @@ export default class Hastebin {
   }
 
   async _post(code) {
+    if (typeof (this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     if (!code) throw new Error('You must supply code to upload to a haste service.');
     const res = await fetch(`${this.baseURL}/documents`, {
       method: 'POST',

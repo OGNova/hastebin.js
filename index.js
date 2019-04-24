@@ -2,12 +2,6 @@ const fetch = require('node-fetch');
 
 module.exports = class Hastebin {
   /**
-   * @typedef {Object} ClientOptions
-   * @property {Boolean} [dev=false]
-   * @memberof Hastebin
-   */
-
-  /**
   * @param {ClientOptions} [options] Client options 
   */
   constructor(options = {}) {
@@ -16,16 +10,24 @@ module.exports = class Hastebin {
     * @type {object} 
     */
     this.options = options;
+
     /**
     * Whether or not to use hasteb.in
     * @type {Boolean} 
     */
     this.dev = options.dev || false;
+    
     /**
-    * Base URL for Hastebin client.
-    * @type {string} 
+    *  Supplied Haste client URL.
+    * @type {String}
     */
-    this.baseURL = options.url || this.dev ? 'https://hasteb.in' : 'https://hastebin.com';
+    this.url = options.url;
+
+    /**
+     * Base URL for Hastebin client.
+     * @type {string}
+     */
+    this.baseURL = this.url ? this.url : 'https://hasteb.in';
   }
 
   /**
@@ -37,6 +39,7 @@ module.exports = class Hastebin {
   }
 
   async _post(code) {
+    if (typeof(this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     if (!code) throw new Error('You must supply code to upload to a haste service.');
     const res = await fetch(`${this.baseURL}/documents`, {
       method: 'POST',
