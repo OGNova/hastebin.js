@@ -7,3 +7,8 @@ if (args[2] === 'post') {
   const code = args.slice(3);
   const link = h.post(code.join(' ')).then(link => console.log(`Posted to ${link}`));
 }
+
+if (args[2] === 'get') {
+  const key = args[3];
+  const link = h.get(key).then(json => console.log(json));
+}
