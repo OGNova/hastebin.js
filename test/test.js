@@ -1,4 +1,4 @@
-const haste = require('../index.js');
+const haste = require('../src/index.js');
 const h = new haste({ url: 'https://hasteb.in' });
 
 const args = process.argv;

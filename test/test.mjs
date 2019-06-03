@@ -1,4 +1,4 @@
-import Hastebin  from '../index.js';
+import Hastebin from '../src/index.js';
 const h = new Hastebin({ url: 'https://hasteb.in' });
 
 const args = process.argv;

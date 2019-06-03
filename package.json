@@ -4,7 +4,8 @@
   "description": "A NPM package to post data to hastebin.",
   "main": "index.js",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "fix": "eslint --fix ."
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,9 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@types/node": "^10.1.2",
+    "@types/node": "^12.0.4",
     "eslint": "^5.16.0",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.3"
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1"
   }
 }
