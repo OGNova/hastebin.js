@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/OGNova/hastebin.js#readme",
   "dependencies": {
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "@types/node": "^10.1.2",
