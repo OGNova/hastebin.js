@@ -8,5 +8,6 @@ declare class Hastebin {
     get(key: string): Promise<object>;
 }
 
+export = Hastebin
 // Type definitions for hastebin.js
 // Definitions by Charalampos Fanoulis <charalampos.fanoulis@gmail.com>
