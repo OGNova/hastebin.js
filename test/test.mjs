@@ -1,6 +1,6 @@
 // Not touching this because I dont know if tape works with mjs -CF
 
-import Hastebin from '../';
+import Hastebin from '../src/index';
 const h = new Hastebin({ url: 'https://hasteb.in' });
 
 const args = process.argv;
