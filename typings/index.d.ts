@@ -1,13 +1,13 @@
 interface ClientOptions {
-    dev?: boolean;
-    url?: string;
-}
-
+        dev?: boolean;
+        url?: string;
+    }
+    
 declare class Hastebin {
-    constructor(clientOptions: ClientOptions)
-    post(code: string): Promise<string>;
-    get(key: string): Promise<object>;
-}
+        constructor(clientOptions?: ClientOptions)
+        post(code: string): Promise<string>;
+        get(key: string): Promise<string>;
+    }
 
 export = Hastebin
 // Type definitions for hastebin.js
