@@ -6,7 +6,7 @@ interface ClientOptions {
 declare class Hastebin {
         constructor(clientOptions?: ClientOptions)
         post(code: string): Promise<string>;
-        get(key: string): Promise<object>;
+        get(key: string): Promise<string>;
     }
 
 export = Hastebin
