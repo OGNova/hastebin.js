@@ -17,8 +17,8 @@ const link = haste.post('Helllo from hastebin.js!').then(link => console.log(lin
 
 * [Hastebin](#Hastebin)
   * _instance_
-    * [.post(opts)](#Hastebin+post) ⇒ `{Promise<Pending>}`
-
+    * [.post(code)](#Hastebin+post) ⇒ `{Promise<Pending>}`
+    * [.get(code)](#Hastebin+get) => `{Promise<Pending>}`
 
 <a name="Hastebin+post"></a>
 
@@ -26,4 +26,12 @@ const link = haste.post('Helllo from hastebin.js!').then(link => console.log(lin
 
 | Param | Type | Description
 | --- | --- | --- |
-| opts | <code>string</code> | Required. The string that you want to post to Hastebin.
+| code | <code>string</code> | Required. The string that you want to post to Hastebin.
+
+<a name="Hastebin+get"></a>
+
+### Hastebin.get
+
+| Param | Type | Description
+| --- | --- | --- |
+| code | <code>string</code> | Required. The file you'd like to get from Hastebin.
