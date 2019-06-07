@@ -31,7 +31,13 @@ jobs:
             npm run lint
 
       - run:
-          name: Run Test
+          name: Run Jest test
           command: |
-            echo "Running tests."
-            npm test
+            echo "Running Jest tests"
+            npm run test-jest
+
+      - run:
+          name: Run tape test
+          command: |
+            echo "Running tape tests"
+            npm run test-tape
