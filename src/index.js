@@ -34,8 +34,8 @@ module.exports = class Hastebin {
   * @param {any} code Code to post.
   * @returns {Promise<pending>} 
   */
-  async post(code) {
-    return this._post(code);
+  async post(code, extension) {
+    return this._post(code, extension);
   }
 
 
@@ -47,15 +47,17 @@ module.exports = class Hastebin {
     return this._get(key);
   }
 
-  async _post(code) {
+  async _post(code, extension) {
+    const validExtensions = ['bat', 'c', 'cpp', 'css', 'html', 'ini', 'java', 'js', 'jsx', 'json', 'lua', 'md', 'php', 'py', 'pyc', 'scss', 'sql', 'xml'];
     if (typeof(this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     if (!code) throw new Error('You must supply code to upload to a haste service.');
+    if (!validExtensions.includes(extension)) throw new Error(`Invalid file type, please use one of the following. ${validExtensions.join(', ')}`);
     const res = await fetch(`${this.baseURL}/documents`, {
       method: 'POST',
       body: code
     });
     const json = await res.json();
-    const url = `${this.baseURL}/${json.key}.js`;
+    const url = `${this.baseURL}/${json.key}.${extension}`;
     return url;
   }
 

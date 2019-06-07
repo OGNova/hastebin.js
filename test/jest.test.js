@@ -24,13 +24,13 @@ describe('Advanced client', () => {
 describe('Posting and getting', () => {
   h = new Hastebin({ dev: true, baseURL: 'https://hasteb.in' });
   test('posting', () => {
-    h.post('abcdEFGH').then(link => {
+    h.post('abcdEFGH', 'js').then(link => {
       expect(typeof(link)).toBe('string');
     });
   });
 
   test('getting', () => {
-    h.get('rejocivu').then(raw => {
+    h.get('rejocivu', 'js').then(raw => {
       expect(raw).toBe('Hello World');
     });
   });
