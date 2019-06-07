@@ -53,7 +53,8 @@ export default class Hastebin {
       method: 'POST',
       body: code
     });
-    if (!res.status !== 200) throw new Error('Something went wrong, please try again later.');
+    console.log(res.status);
+    if (res.status !== 200) throw new Error('Something went wrong, please try again later.');
     const json = await res.json();
     const url = `${this.baseURL}/${json.key}.${extension}`;
     return url;
