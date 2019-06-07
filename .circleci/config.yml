@@ -28,4 +28,10 @@ jobs:
           name: Run ESLint
           command: |
             echo "Running ESLint"
+            npm run lint
+
+      - run:
+          name: Run Test
+          command: |
+            echo "Running tests."
             npm test
