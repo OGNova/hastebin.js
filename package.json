@@ -9,8 +9,7 @@
     "lint": "eslint .",
     "fix": "eslint --fix .",
     "test-types": "tsc --lib es6 --outFile tpetests.js --strict ./test/typings-test.js",
-    "test-jest": "jest ./test/jest.test.js",
-    "test-tape": "node ./test/test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

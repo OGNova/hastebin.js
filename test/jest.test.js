@@ -18,3 +18,18 @@ describe('Advances client', () => {
     expect(h.baseURL).toBe('https://hasteb.in');
   });
 });
+
+describe('Posting and getting', () => {
+  h = new Hastebin({ dev: true, baseURL: 'https://hasteb.in' });
+  test('posting', () => {
+    h.post('abcdEFGH').then(link => {
+      expect(typeof(link)).toBe('string');
+    });
+  });
+
+  test('getting', () => {
+    h.get('rejocivu').then(raw => {
+      expect(raw).toBe('Hello World');
+    });
+  });
+});
