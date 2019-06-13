@@ -30,7 +30,7 @@ describe('Posting and getting', () => {
   });
 
   test('getting', () => {
-    h.get('rejocivu', 'js').then(raw => {
+    h.get('rejocivu').then(raw => {
       expect(raw).toBe('Hello World');
     });
   });
