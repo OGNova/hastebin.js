@@ -65,6 +65,7 @@ module.exports = class Hastebin {
   async _get(key) {
     if (typeof(this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     const res = await fetch(`${this.baseURL}/raw/${key}`);
+    if (!res.ok) throw new Error('Something went wrong, please try again later.');
     const json = await res.text();
     return json;
   }

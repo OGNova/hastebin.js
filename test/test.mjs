@@ -8,10 +8,10 @@ const args = process.argv;
 if (args[2] === 'post') {
   const code = args.slice(4);
   const ext = args[3];
-  const link = h.post(code.join(' '), ext).then(link => console.log(`Posted to ${link}`));
+  const link = h.post(code.join(' '), ext).then(link => console.log(link));
 }
 
 if (args[2] === 'get') {
   const key = args[3];
-  const link = h.get(key).then(json => console.log(json));
+  const link = h.get(key).then(link => console.log(link));
 }
