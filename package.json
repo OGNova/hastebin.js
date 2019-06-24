@@ -8,8 +8,7 @@
     "release": "release-it",
     "lint": "eslint .",
     "fix": "eslint --fix .",
-    "postpublish": "git log --max-count 10 --pretty=format:'\"%h %an: %s\"' --graph > CHANGELOG.log",
-    "bump": "git add . && git commit -m \"Update changelog.\" && release-it minor --ci",
+    "changelog": "git log --max-count 10 --pretty=format:'\"%h %an: %s\"' --graph > CHANGELOG.log",
     "test-types": "tsc --lib es6 --outFile tpetests.js --strict ./test/typings-test.js",
     "test": "jest"
   },
