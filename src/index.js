@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const { version } = require('../package.json');
 
 module.exports = class Hastebin {
   /**
@@ -55,7 +56,10 @@ module.exports = class Hastebin {
     if (!validExtensions.includes(extension)) throw new Error(`Invalid file type, please use one of the following. ${validExtensions.join(', ')}`);
     const res = await fetch(`${this.baseURL}/documents`, {
       method: 'POST',
-      body: code
+      body: code,
+      headers: {
+        'user-agent': `hastebin.js/${version} Node.js/10.15.3`
+      }
     });
     await this.checkStatus(res);
     const json = await res.json();
@@ -65,7 +69,11 @@ module.exports = class Hastebin {
 
   async _get(key) {
     if (typeof(this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
-    const res = await fetch(`${this.baseURL}/raw/${key}`);
+    const res = await fetch(`${this.baseURL}/raw/${key}`, {
+      headers: {
+        'user-agent': `hastebin.js/${version} Node.js/10.15.3`
+      }
+    });
     await this.checkStatus(res);
     const json = await res.text();
     return json;
