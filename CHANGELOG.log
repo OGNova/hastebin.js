@@ -1,3 +1,5 @@
+* 'e8cd98e Mon Jun 24 17:00:41 2019 G OGNova: chore: release v1.2.2'
+* 'e77d218 Mon Jun 24 17:00:12 2019 G OGNova: Update changelog.'
 * 'cdbf2d3 Mon Jun 24 16:57:50 2019 G OGNova: New helper method to check response status.'
 * 'd613a49 Mon Jun 24 16:07:05 2019 G OGNova: Update CHANGELOG, update package.json.'
 * '7f1d29c Mon Jun 24 10:18:23 2019 G OGNova: Update changelog.'
@@ -6,5 +8,3 @@
 * '531cb55 Mon Jun 24 10:06:11 2019 G OGNova: Update package.json.'
 * 'e3060b5 Sun Jun 23 23:18:28 2019 G OGNova: chore: release v1.2.0'
 * '6b9ffdb Sun Jun 23 23:18:03 2019 G OGNova: Update changelog.'
-* 'a79b5f3 Sun Jun 23 23:17:32 2019 G OGNova: chore: release v1.1.9'
-* '200184f Sun Jun 23 23:16:53 2019 G OGNova: Update scripts.'
