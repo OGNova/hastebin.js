@@ -1,0 +1,12 @@
+{
+  "git": {
+    "tag": false,
+    "commitMessage": "chore: release v${version}",
+    "changelog": "git log --pretty=format:\"* %s (%h)\" ${latestTag}...HEAD"
+  },
+
+  "hooks": {
+    "before:init": ["npm run lint", "npm test"],
+    "after:release": "echo Successfully released ${name} at v${version} to ${repo.repository}"
+  }
+}
