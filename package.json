@@ -1,6 +1,6 @@
 {
   "name": "hastebin.js",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "A NPM package to post data to hastebin.",
   "main": "src/index.js",
   "typings": "typings/index.d.ts",
