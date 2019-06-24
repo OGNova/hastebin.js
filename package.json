@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "typings": "typings/index.d.ts",
   "scripts": {
-    "release": "release-it",
+    "release": "release-it --ci",
     "lint": "eslint .",
     "fix": "eslint --fix .",
     "changelog": "git log --max-count 10 --pretty=format:'\"%h %an: %s\"' --graph > CHANGELOG.log",
