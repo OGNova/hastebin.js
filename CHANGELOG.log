@@ -1,3 +1,5 @@
+* '1cc9786 OGNova: chore: release v1.1.8'
+* 'e27e0e1 OGNova: Create changelog, update NPM scripts.'
 * '517799a OGNova: Release 1.1.7'
 * 'bef0762 OGNova: Remove config.'
 * '904c4f0 OGNova: Update release-it config.'
@@ -7,6 +9,3 @@
 |\  
 | * '3e154cf OGNova: chore: release v1.1.5'
 * | '420cec5 OGNova: chore: release v1.1.6'
-* | '0afa1bf OGNova: Updates.'
-|/  
-* '10159aa OGNova: Updates.'
