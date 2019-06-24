@@ -8,7 +8,7 @@
     "release": "release-it --ci",
     "lint": "eslint .",
     "fix": "eslint --fix .",
-    "changelog": "git log --max-count 10 --pretty=format:'\"%h %an: %s\"' --graph > CHANGELOG.log",
+    "changelog": "git log --max-count 10 --pretty=format:'\"%h %ad %G? %an: %s\"' --date=local --graph > CHANGELOG.log",
     "test-types": "tsc --lib es6 --outFile tpetests.js --strict ./test/typings-test.js",
     "test": "jest"
   },
