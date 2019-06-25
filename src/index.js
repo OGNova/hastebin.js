@@ -58,7 +58,7 @@ module.exports = class Hastebin {
       method: 'POST',
       body: code,
       headers: {
-        'user-agent': `hastebin.js/${version} Node.js/10.15.3`
+        'User-Agent': `hastebin.js/${version} Node.js/10.15.3`
       }
     });
     await this.checkStatus(res);
@@ -71,7 +71,7 @@ module.exports = class Hastebin {
     if (typeof(this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     const res = await fetch(`${this.baseURL}/raw/${key}`, {
       headers: {
-        'user-agent': `hastebin.js/${version} Node.js/10.15.3`
+        'User-Agent': `hastebin.js/${version} Node.js/10.15.3`
       }
     });
     await this.checkStatus(res);
