@@ -1,3 +1,5 @@
+* '65229c5 Tue Jun 25 11:11:46 2019 G OGNova: Update User-Agent.'
+* 'f00c813 Mon Jun 24 17:49:30 2019 G OGNova: Update changelog.'
 * '4d142e7 Mon Jun 24 17:38:11 2019 G OGNova: Update fetch methods.'
 * '8a297d0 Mon Jun 24 17:07:52 2019 G OGNova: Update changelog.'
 * 'e8cd98e Mon Jun 24 17:00:41 2019 E OGNova: chore: release v1.2.2'
@@ -6,5 +8,3 @@
 * 'd613a49 Mon Jun 24 16:07:05 2019 E OGNova: Update CHANGELOG, update package.json.'
 * '7f1d29c Mon Jun 24 10:18:23 2019 E OGNova: Update changelog.'
 * '1c522d3 Mon Jun 24 10:08:36 2019 E OGNova: Update package.json.'
-* 'f6d7ea5 Mon Jun 24 10:07:44 2019 E OGNova: chore: release v1.2.1'
-* '531cb55 Mon Jun 24 10:06:11 2019 E OGNova: Update package.json.'
