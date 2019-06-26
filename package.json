@@ -1,6 +1,6 @@
 {
   "name": "hastebin.js",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A NPM package to post data to hastebin.",
   "main": "src/index.js",
   "typings": "typings/index.d.ts",
@@ -10,7 +10,7 @@
     "fix": "eslint --fix .",
     "changelog": "git log --max-count 10 --pretty=format:'\"%h %ad %G? %an: %s\"' --date=local --graph > CHANGELOG.log",
     "test-types": "tsc --lib es6 --outFile tpetests.js --strict ./test/typings-test.js",
-    "test": "jest"
+    "test": "jest ./test/jest.test.js"
   },
   "repository": {
     "type": "git",
