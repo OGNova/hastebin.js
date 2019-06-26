@@ -1,6 +1,13 @@
 import * as nodeFetch from 'node-fetch';
 const fetch = nodeFetch.default;
-const { version } = require('../package.json');
+
+import version from '../package.json';
+import ClientError from '../errors/ClientError';
+import ServerError from '../errors/ServerError';
+
+// const { version } = require('../package.json');
+// const ClientError = require('../errors/ClientError');
+// const ServerError = require('../errors/ServerError');
 
 export default class Hastebin {
   constructor(options = {}) {
@@ -67,38 +74,46 @@ export default class Hastebin {
   async _get(key) {
     if (typeof (this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     const res = await fetch(`${this.baseURL}/raw/${key}`);
-    // await this.checkStatus(res);
+    await this.checkStatus(res);
     const json = await res.text();
     return json;
   }
 
   async checkStatus(res) {
-    if (res.status >= 401 && res.status <= 504) {
-      switch (res.status) {
-        case '401':
-          throw new Error('Error 401: Something went wrong, and the request was not authorized. Please try again later.');
-        case '403':
-          throw new Error('Error 403: Something went wrong, and we were not able to access the document. Please try again later.');
-        case '404':
-          throw new Error('Error 404: The document you are trying to get no longer exists. Please check your spelling and try again.');
-        case '408':
-          throw new Error('Error 408: The request timed out, please try again later.');
-        case '429':
-          throw new Error('Error 429: The server received too many requests, and has ratelimited the client. Please try again later.');
-        case '451':
-          throw new Error('Error 451: The server administrator has denied access to this document due to legal reasons.');
+    switch (res.status) {
+      case 401:
+        throw new ClientError('Error 401:', 'Something went wrong, and the request was not authorized. Please try again later.');
+      case 403:
+        throw new ClientError('Error 403:', 'Something went wrong, and we were not able to access the document. Please try again later.');
+      case 404:
+        throw new ClientError('Error 404:', 'The document you are trying to get no longer exists. Please check your spelling and try again.');
+      case 408:
+        throw new ClientError('Error 408:', 'The request timed out, please try again later.');
+      case 429:
+        throw new ClientError('Error 429:', 'The server received too many requests, and has ratelimited the client. Please try again later.');
+      case 451:
+        throw new ClientError('Error 451:', 'The server administrator has denied access to this document due to legal reasons.');
 
-        case '500':
-          throw new Error('Error 500: Something went wrong, please try again later.');
-        case '501':
-          throw new Error('Error 501: Something went wrong, please try again later.');
-        case '502':
-          throw new Error('Error 502: Bad gateway. Please try again later.');
-        case '503':
-          throw new Error('Error 503: The server could not handle the request at this time. Please try again later.');
-        case '504':
-          throw new Error('Error 504: The gateway timed out, please try again later.');
-      }
+      case 500:
+        throw new ServerError('Error 500:', 'Something went wrong, please try again later.');
+      case 501:
+        throw new ServerError('Error 501:', 'Something went wrong, please try again later.');
+      case 502:
+        throw new ServerError('Error 502:', 'Bad gateway. Please try again later.');
+      case 503:
+        throw new ServerError('Error 503:', 'The server could not handle the request at this time. Please try again later.');
+      case 504:
+        throw new ServerError('Error 504:', 'The gateway timed out, please try again later.');
     }
   }
 }
+
+process.on('uncaughtException', (err) => {
+  const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, 'g'), './');
+  console.error('Uncaught Exception: ', errorMsg);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', err => {
+  console.error('Uncaught Promise Error: ', err);
+});
