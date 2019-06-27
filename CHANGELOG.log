@@ -1,3 +1,5 @@
+* '33d5c49 Wed Jun 26 23:54:17 2019 G OGNova: Update index files, remove comments.'
+* 'f1402fb Wed Jun 26 00:30:33 2019 G OGNova: chore: release v1.2.4'
 * '809eb89 Wed Jun 26 00:27:16 2019 G OGNova: New Error types.'
 * '37c66f8 Tue Jun 25 11:14:32 2019 G OGNova: chore: release v1.2.3'
 * '442ff81 Tue Jun 25 11:12:36 2019 G OGNova: Update changelog.'
@@ -6,5 +8,3 @@
 * '4d142e7 Mon Jun 24 17:38:11 2019 G OGNova: Update fetch methods.'
 * '8a297d0 Mon Jun 24 17:07:52 2019 G OGNova: Update changelog.'
 * 'e8cd98e Mon Jun 24 17:00:41 2019 E OGNova: chore: release v1.2.2'
-* 'e77d218 Mon Jun 24 17:00:12 2019 E OGNova: Update changelog.'
-* 'cdbf2d3 Mon Jun 24 16:57:50 2019 E OGNova: New helper method to check response status.'
