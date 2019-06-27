@@ -5,10 +5,6 @@ import version from '../package.json';
 import ClientError from '../errors/ClientError';
 import ServerError from '../errors/ServerError';
 
-// const { version } = require('../package.json');
-// const ClientError = require('../errors/ClientError');
-// const ServerError = require('../errors/ServerError');
-
 export default class Hastebin {
   constructor(options = {}) {
     /**

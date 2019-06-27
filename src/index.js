@@ -63,7 +63,6 @@ module.exports = class Hastebin {
         'User-Agent': `hastebin.js/${version} Node.js/10.15.3`
       }
     });
-    // console.log(res.status);
     await this.checkStatus(res);
     const json = await res.json();
     const url = `${this.baseURL}/${json.key}.${extension}`;
