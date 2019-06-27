@@ -17,7 +17,7 @@ const link = haste.post('Helllo from hastebin.js!').then(link => console.log(lin
 
 * [Hastebin](#Hastebin)
   * _instance_
-    * [.post(code)](#Hastebin+post) ⇒ `{Promise<Pending>}`
+    * [.post(code, extension)](#Hastebin+post) ⇒ `{Promise<Pending>}`
     * [.get(key)](#Hastebin+get) => `{Promise<Pending>}`
 
 <a name="Hastebin+post"></a>
@@ -27,6 +27,7 @@ const link = haste.post('Helllo from hastebin.js!').then(link => console.log(lin
 | Param | Type | Description
 | --- | --- | --- |
 | code | <code>string</code> | Required. The string that you want to post to Hastebin.
+| extension | <code>string</code> | The extension that you'd like the file to upload as. If not provided, defaults to <code>js</code>
 
 <a name="Hastebin+get"></a>
 
