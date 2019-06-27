@@ -1,10 +1,10 @@
-* '33d5c49 Wed Jun 26 23:54:17 2019 G OGNova: Update index files, remove comments.'
-* 'f1402fb Wed Jun 26 00:30:33 2019 G OGNova: chore: release v1.2.4'
-* '809eb89 Wed Jun 26 00:27:16 2019 G OGNova: New Error types.'
-* '37c66f8 Tue Jun 25 11:14:32 2019 G OGNova: chore: release v1.2.3'
-* '442ff81 Tue Jun 25 11:12:36 2019 G OGNova: Update changelog.'
-* '65229c5 Tue Jun 25 11:11:46 2019 G OGNova: Update User-Agent.'
-* 'f00c813 Mon Jun 24 17:49:30 2019 G OGNova: Update changelog.'
-* '4d142e7 Mon Jun 24 17:38:11 2019 G OGNova: Update fetch methods.'
-* '8a297d0 Mon Jun 24 17:07:52 2019 G OGNova: Update changelog.'
-* 'e8cd98e Mon Jun 24 17:00:41 2019 E OGNova: chore: release v1.2.2'
+* 7b54260 Wed Jun 26 23:58:58 2019 G OGNova: chore: release v1.2.5
+* 8a7c6ac Wed Jun 26 23:58:30 2019 G OGNova: Update incorrect file path.
+* 55852c2 Wed Jun 26 23:55:14 2019 G OGNova: Update changelog.
+* 33d5c49 Wed Jun 26 23:54:17 2019 G OGNova: Update index files, remove comments.
+* f1402fb Wed Jun 26 00:30:33 2019 G OGNova: chore: release v1.2.4
+* 809eb89 Wed Jun 26 00:27:16 2019 G OGNova: New Error types.
+* 37c66f8 Tue Jun 25 11:14:32 2019 G OGNova: chore: release v1.2.3
+* 442ff81 Tue Jun 25 11:12:36 2019 G OGNova: Update changelog.
+* 65229c5 Tue Jun 25 11:11:46 2019 G OGNova: Update User-Agent.
+* f00c813 Mon Jun 24 17:49:30 2019 G OGNova: Update changelog.
