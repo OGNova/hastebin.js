@@ -1,3 +1,4 @@
+* e29f306 Thu Jun 27 00:02:46 2019 G OGNova: chore: release v1.2.6
 * 38addf7 Thu Jun 27 00:02:16 2019 G OGNova: Update package scripts.
 * 7b54260 Wed Jun 26 23:58:58 2019 G OGNova: chore: release v1.2.5
 * 8a7c6ac Wed Jun 26 23:58:30 2019 G OGNova: Update incorrect file path.
@@ -7,4 +8,3 @@
 * 809eb89 Wed Jun 26 00:27:16 2019 G OGNova: New Error types.
 * 37c66f8 Tue Jun 25 11:14:32 2019 G OGNova: chore: release v1.2.3
 * 442ff81 Tue Jun 25 11:12:36 2019 G OGNova: Update changelog.
-* 65229c5 Tue Jun 25 11:11:46 2019 G OGNova: Update User-Agent.
