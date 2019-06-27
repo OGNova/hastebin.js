@@ -1,3 +1,6 @@
+* 0fc544b Thu Jun 27 19:09:04 2019 G OGNova: It'll work some day.
+* 9a650b4 Thu Jun 27 19:08:25 2019 G OGNova: chore: release v1.2.10
+* 40d6047 Thu Jun 27 19:08:06 2019 G OGNova: chore: update changelog
 * d4e7dcc Thu Jun 27 19:07:50 2019 G OGNova: Revert version.
 * 44536b5 Thu Jun 27 19:07:15 2019 G OGNova: chore: release v1.2.11
 * 97a96f6 Thu Jun 27 19:06:53 2019 G OGNova: chore: update changelog
@@ -5,6 +8,3 @@
 * 7f2f738 Thu Jun 27 19:05:33 2019 G OGNova: chore: update changelog
 * ad35fe6 Thu Jun 27 19:04:48 2019 G OGNova: Change basic status code.
 * ff80061 Thu Jun 27 00:21:49 2019 G OGNova: chore: release v1.2.9
-* 5322ab4 Thu Jun 27 00:21:31 2019 G OGNova: chore: update changelog
-* 5f9dc66 Thu Jun 27 00:21:21 2019 G OGNova: Update documentation.
-* 96b9fb8 Thu Jun 27 00:17:25 2019 G OGNova: chore: release v1.2.8
