@@ -6,7 +6,7 @@ class InternalError extends Error {
 
     Error.captureStackTrace(this, this.constructor);
 
-    this.status = status || 418;
+    this.status = status || 500;
   }
 }
 
