@@ -1,3 +1,6 @@
+* 8940487 Thu Jun 27 00:13:41 2019 G OGNova: Update gitignore.
+* 68fbbd4 Thu Jun 27 00:07:46 2019 G OGNova: chore: release v1.2.7
+* 40bb52d Thu Jun 27 00:07:30 2019 G OGNova: chore: update changelog
 * 8206720 Thu Jun 27 00:06:20 2019 G OGNova: chore: update changelog
 * e29f306 Thu Jun 27 00:02:46 2019 G OGNova: chore: release v1.2.6
 * 38addf7 Thu Jun 27 00:02:16 2019 G OGNova: Update package scripts.
@@ -5,6 +8,3 @@
 * 8a7c6ac Wed Jun 26 23:58:30 2019 G OGNova: Update incorrect file path.
 * 55852c2 Wed Jun 26 23:55:14 2019 G OGNova: Update changelog.
 * 33d5c49 Wed Jun 26 23:54:17 2019 G OGNova: Update index files, remove comments.
-* f1402fb Wed Jun 26 00:30:33 2019 G OGNova: chore: release v1.2.4
-* 809eb89 Wed Jun 26 00:27:16 2019 G OGNova: New Error types.
-* 37c66f8 Tue Jun 25 11:14:32 2019 G OGNova: chore: release v1.2.3
