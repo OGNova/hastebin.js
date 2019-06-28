@@ -50,7 +50,7 @@ export default class Hastebin {
   }
 
   async _post(code, extension) {
-    const validExtensions = ['bat', 'c', 'cpp', 'css', 'html', 'ini', 'java', 'js', 'jsx', 'json', 'lua', 'md', 'php', 'py', 'pyc', 'scss', 'sql', 'xml'];
+    const validExtensions = ['bat', 'c', 'cpp', 'css', 'html', 'ini', 'java', 'js', 'jsx', 'json', 'lua', 'md', 'php', 'py', 'pyc', 'scss', 'sql', 'xml', 'yaml'];
     if (typeof (this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     if (!code) throw new Error('You must supply code to upload to a haste service.');
     if (!extension) extension = 'js';
