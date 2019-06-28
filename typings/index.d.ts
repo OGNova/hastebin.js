@@ -1,5 +1,4 @@
 interface ClientOptions {
-        dev?: boolean;
         url?: string;
     }
     

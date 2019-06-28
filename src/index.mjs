@@ -16,6 +16,7 @@ export default class Hastebin {
     /**
     * Whether or not to use hasteb.in
     * @type {Boolean}
+    * @deprecated No longer used, will be removed in a future version.
     */
     this.dev = options.dev || false;
 
