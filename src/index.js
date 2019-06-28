@@ -1,8 +1,10 @@
 const fetch = require('node-fetch');
+const Redis = require('ioredis');
 
 const { version } = require('../package.json');
 const ClientError = require('../errors/ClientError');
 const ServerError = require('../errors/ServerError');
+
 module.exports = class Hastebin {
   /**
   * @param {ClientOptions} [options] Client options 
@@ -20,7 +22,13 @@ module.exports = class Hastebin {
     * @deprecated No longer used, will be removed in a future version. 
     */
     this.dev = options.dev || false;
-    
+
+    /**
+    * Whether or not to store hastes.
+    * @type {Boolean} 
+    */
+    this.savePosts = options.savePosts || false;
+
     /**
     *  Supplied Haste client URL.
     * @type {String}
@@ -53,7 +61,7 @@ module.exports = class Hastebin {
 
   async _post(code, extension) {
     const validExtensions = ['bat', 'c', 'cpp', 'css', 'html', 'ini', 'java', 'js', 'jsx', 'json', 'lua', 'md', 'php', 'py', 'pyc', 'scss', 'sql', 'xml'];
-    if (typeof(this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
+    if (typeof (this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     if (!code) throw new Error('You must supply code to upload to a haste service.');
     if (!extension) extension = 'js';
     if (!validExtensions.includes(extension)) throw new Error(`Invalid file type, please use one of the following. ${validExtensions.join(', ')}`);
@@ -67,11 +75,20 @@ module.exports = class Hastebin {
     await this.checkStatus(res);
     const json = await res.json();
     const url = `${this.baseURL}/${json.key}.${extension}`;
+    if (this.savePosts == true) {
+      const redis = new Redis();
+      redis.set(json.key, code, 'EX', 3600);
+    }
     return url;
   }
 
   async _get(key) {
-    if (typeof(this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
+    if (key.startsWith('redis:')) {
+      const json = redis.get(key.slice(6));
+      return JSON.parse(json);
+    }
+
+    if (typeof (this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     const res = await fetch(`${this.baseURL}/raw/${key}`, {
       headers: {
         'User-Agent': `hastebin.js/${version} Node.js/10.15.3`
@@ -86,7 +103,7 @@ module.exports = class Hastebin {
     switch (res.status) {
       case 401:
         throw new ClientError('Error 401:', 'Something went wrong, and the request was not authorized. Please try again later.');
-      case 403: 
+      case 403:
         throw new ClientError('Error 403:', 'Something went wrong, and we were not able to access the document. Please try again later.');
       case 404:
         throw new ClientError('Error 404:', 'The document you are trying to get no longer exists. Please check your spelling and try again.');
