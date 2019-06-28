@@ -1,6 +1,8 @@
 import * as nodeFetch from 'node-fetch';
 const fetch = nodeFetch.default;
 
+import Redis from 'ioredis';
+
 import version from '../package.json';
 import ClientError from '../errors/ClientError';
 import ServerError from '../errors/ServerError';
@@ -19,6 +21,12 @@ export default class Hastebin {
     * @deprecated No longer used, will be removed in a future version.
     */
     this.dev = options.dev || false;
+
+    /**
+    * Whether or not to store hastes.
+    * @type {Boolean} 
+    */
+    this.savePosts = options.savePosts || false;
 
     /**
     *  Supplied Haste client URL.
@@ -65,10 +73,20 @@ export default class Hastebin {
     await this.checkStatus(res);
     const json = await res.json();
     const url = `${this.baseURL}/${json.key}.${extension}`;
+    if (this.savePosts == true) {
+      const redis = new Redis();
+      redis.set(json.key, code, 'EX', 3600);
+    }
+    
     return url;
   }
 
   async _get(key) {
+    if (key.startsWith('redis:')) {
+      const json = redis.get(key.slice(6));
+      return JSON.parse(json);
+    }
+    
     if (typeof (this.baseURL) !== 'string') throw new Error('The haste service must be a string.');
     const res = await fetch(`${this.baseURL}/raw/${key}`);
     await this.checkStatus(res);

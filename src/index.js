@@ -79,6 +79,7 @@ module.exports = class Hastebin {
       const redis = new Redis();
       redis.set(json.key, code, 'EX', 3600);
     }
+    
     return url;
   }
 
