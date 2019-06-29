@@ -76,7 +76,7 @@ module.exports = class Hastebin {
     const json = await res.json();
     const url = `${this.baseURL}/${json.key}.${extension}`;
     if (this.savePosts == true) {
-      const redis = new Redis();
+      const redis = new Redis({ db: 4 });
       redis.set(json.key, code, 'EX', 3600);
     }
     
